@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promoções e um Presente para Você!</title>
     <style>
-        /* SEU CSS CONTINUA IGUAL, SEM MUDANÇAS */
+        /* Seu CSS permanece o mesmo */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
         :root {
             --cor-vermelha: #D24843;
@@ -13,11 +13,6 @@
             --cor-verde: #85B87A;
             --cor-bege: #FFD791;
             --cor-fundo: #FFF8E7;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 72, 67, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(210, 72, 67, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 72, 67, 0); }
         }
         body {
             font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo);
@@ -70,8 +65,8 @@
 
         <p class="bridge-text">Gostou? Fica ainda melhor...<br>Responda abaixo e desbloqueie um <strong>PRESENTE SURPRESA!</strong></p>
 
-        <!-- MUDANÇA 1: ACTION ATUALIZADO PARA O NOVO LINK DO FORMSPREE -->
-        <form id="lead-form" action="https://formspree.io/f/mzzlgerq" method="POST">
+        <!-- Formulário sem action, tudo é processado localmente -->
+        <form id="lead-form">
             <div class="form-group">
                 <label for="name">Seu primeiro nome:</label>
                 <input type="text" id="name" name="Nome" placeholder="Como podemos te chamar?" required>
@@ -92,6 +87,21 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('name').value;
+            const whatsapp = document.getElementById('phone').value;
+            const mensagem = `Olá! Vi as promoções da semana e meu nome é ${nome}. Qual é a surpresa? 👀`;
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            const urlWhatsapp = `https://wa.me/5546991032150?text=${mensagemCodificada}`;
+            window.location.href = urlWhatsapp;
+        });
+    </script>
+
+</body>
+</html>
 
     <!-- MUDANÇA 2: SCRIPT REMOVIDO (MUITO IMPORTANTE) -->
     <!-- O JavaScript foi apagado para que o redirecionamento funcione no celular -->
