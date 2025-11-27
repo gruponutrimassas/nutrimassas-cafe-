@@ -120,7 +120,7 @@
         <p class="bridge-text">Gostou? Fica ainda melhor...<br>Responda abaixo e desbloqueie um <strong>PRESENTE SURPRESA!</strong></p>
 
         <!-- 3. COLE SEU LINK DO FORMSPREE AQUI -->
-        <form id="lead-form" action="https://formspree.io/f/mzzlgerq" method="POST">
+        <form id="lead-form" action="https://getform.io/f/https://getform.io/f/ayvegdgb" method="POST">
             <div class="form-group">
                 <label for="name">Seu primeiro nome:</label>
                 <input type="text" id="name" name="Nome" placeholder="Como podemos te chamar?" required>
@@ -135,43 +135,42 @@
                 <label><input type="radio" name="Conhece" value="nao" checked> Ainda não, mas fiquei curioso(a)!</label>
             </div>
             <div class="cookie-button-wrapper">
-               <Button onClick={handleUnlock}>Desbloquear Presente</Button>">    
-                
+                <button type="submit" class="cookie-button">
+                    DESBLOQUEAR<br>MEU PRESENTE!
+                </button>
             </div>
         </form>
     </div>
 
     <script>
-    const form = document.getElementById('lead-form');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
-
-        // 1. Captura os dados dos campos (agora pegando 'whatsapp' em vez de 'email')
-        const nome = form.querySelector('[name="nome"]').value;
-        const whatsapp = form.querySelector('[name="whatsapp"]').value; // ALTERADO
-
-        // VERIFICAÇÃO: Garante que os campos não estão vazios
-        if (!nome || !whatsapp) { // ALTERADO
-            alert('Por favor, preencha seu nome e WhatsApp para continuar.'); // ALTERADO
-            return; // Para a execução se os campos estiverem vazios
-        }
-
-        // 2. Monte a mensagem e o link do WhatsApp
-        // IMPORTANTE: Substitua o número de telefone abaixo pelo seu!
-        const telefone = "5546991032150"; // <-- COLOQUE SEU NÚMERO AQUI (com código do país e DDD)
-        
-        // A mensagem agora inclui o WhatsApp do cliente
-        const mensagem = `Olá! Quero desbloquear meu presente. Meu nome é ${nome} e meu WhatsApp é ${whatsapp}.`; // ALTERADO
-        
-        // Codifica a mensagem para ser usada em uma URL
-        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
-
-        // 3. Redireciona o usuário IMEDIATAMENTE
-        window.location.href = urlWhatsApp;
-    });
-</script>
+        const form = document.getElementById('lead-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    // --- 4. PERSONALIZE SEU NÚMERO E MENSAGEM AQUI ---
+                    const seuNumeroWhatsapp = '5546991032150'; // <-- TROQUE PELO SEU NÚMERO
+                    const nome = formData.get('Nome');
+                    const mensagem = `Olá! Vi as promoções da semana e respondi a pesquisa para desbloquear meu presente surpresa! Meu nome é ${nome}. Qual é a surpresa? 👀`;
+                    
+                    const mensagemCodificada = encodeURIComponent(mensagem);
+                    const urlWhatsapp = `https://wa.me/${seuNumeroWhatsapp}?text=${mensagemCodificada}`;
+                    
+                    window.open(urlWhatsapp, '_blank');
+                } else {
+                    alert('Houve um erro ao enviar seu formulário. Por favor, tente novamente.');
+                }
+            }).catch(error => {
+                alert('Houve um erro de conexão. Por favor, tente novamente.');
+            });
+        });
+    </script>
 
 </body>
 </html>
-
