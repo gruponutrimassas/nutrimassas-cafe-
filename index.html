@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promoções e um Presente para Você!</title>
     <style>
+        /* SEU CSS CONTINUA IGUAL, SEM MUDANÇAS */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
         :root {
             --cor-vermelha: #D24843;
             --cor-marrom-escuro: #301014;
@@ -14,72 +14,32 @@
             --cor-bege: #FFD791;
             --cor-fundo: #FFF8E7;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 72, 67, 0.7); }
             70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(210, 72, 67, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 72, 67, 0); }
         }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--cor-fundo);
-            color: var(--cor-marrom-escuro);
-            margin: 0;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo);
+            color: var(--cor-marrom-escuro); margin: 0; padding: 20px;
         }
-
         .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid var(--cor-marrom-escuro);
-            box-shadow: 8px 8px 0px var(--cor-marrom-escuro);
-            max-width: 500px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            margin: 20px auto;
+            background-color: #fff; padding: 30px; border-radius: 15px;
+            border: 2px solid var(--cor-marrom-escuro); box-shadow: 8px 8px 0px var(--cor-marrom-escuro);
+            max-width: 500px; width: 100%; box-sizing: border-box;
+            text-align: center; margin: 20px auto;
         }
-
         .logo { max-width: 150px; margin-bottom: 20px; }
         h1 { color: var(--cor-vermelha); font-size: 1.9em; margin-bottom: 10px; }
         p { color: #555; font-size: 1.1em; }
-
-        .promocoes-semana {
-            margin-top: 30px;
-            text-align: left;
-        }
-        .promocoes-semana h2 {
-            text-align: center;
-            color: var(--cor-marrom-escuro);
-            border-bottom: 2px solid var(--cor-bege);
-            padding-bottom: 10px;
-        }
-        .promo-card {
-            background-color: var(--cor-fundo);
-            border-left: 5px solid var(--cor-verde);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+        .promocoes-semana { margin-top: 30px; text-align: left; }
+        .promocoes-semana h2 { text-align: center; color: var(--cor-marrom-escuro); border-bottom: 2px solid var(--cor-bege); padding-bottom: 10px; }
+        .promo-card { background-color: var(--cor-fundo); border-left: 5px solid var(--cor-verde); padding: 15px; border-radius: 8px; margin-bottom: 10px; }
         .promo-dia { font-weight: 700; color: var(--cor-vermelha); }
-        
-        .bridge-text {
-            margin-top: 40px;
-            margin-bottom: 30px;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--cor-marrom-escuro);
-        }
-
+        .bridge-text { margin-top: 40px; margin-bottom: 30px; font-size: 1.2em; font-weight: 700; color: var(--cor-marrom-escuro); }
         .form-group { margin-bottom: 20px; text-align: left; }
         label { display: block; margin-bottom: 8px; font-weight: bold; }
-        input[type="text"], input[type="tel"] {
-            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;
-            box-sizing: border-box; font-family: 'Poppins', sans-serif; font-size: 1em;
-        }
-        
+        input[type="text"], input[type="tel"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: 'Poppins', sans-serif; font-size: 1em; }
         .cookie-button-wrapper { margin-top: 30px; }
         .cookie-button {
             width: 150px; height: 150px; background-color: var(--cor-vermelha);
@@ -94,33 +54,24 @@
 <body>
 
     <div class="container">
-        
-        <!-- 1. LINK DA LOGO CORRIGIDO (LINK RELATIVO) -->
-        <!-- Certifique-se que o nome do arquivo aqui é EXATAMENTE o mesmo do arquivo que você subiu -->
-       <img src="logo_nutrimassas_cafe_2.png" alt="Logo da Nutrimassas Café" class="logo">
-
-
+        <img src="logo_nutrimassas_cafe_2.png" alt="Logo da Nutrimassas Café" class="logo">
         <h1>Sua espera ficou ainda mais gostosa!</h1>
         <p>Confira nossas delícias da semana enquanto espera.</p>
 
         <div class="promocoes-semana">
             <h2>☕ Delícias da Semana ☕</h2>
-            
-            <!-- 2. PERSONALIZE SUAS PROMOÇÕES AQUI -->
             <div class="promo-card">
-                <span class="promo-dia">SEGUNDA E TERÇA:</span> Combo Força Total (Café + Pão de Queijo ) por R$ 10,00
-                (Café + Pastel) por R$ 15,00.
+                <span class="promo-dia">SEGUNDA E TERÇA:</span> Combo Força Total (Café + Pão de Queijo ) por R$ 10,00 (Café + Pastel) por R$ 15,00.
             </div>
             <div class="promo-card">
                 <span class="promo-dia">QUARTA:</span> Combo família: 100 salgados por R$ 99,90.
             </div>
-           
         </div>
 
         <p class="bridge-text">Gostou? Fica ainda melhor...<br>Responda abaixo e desbloqueie um <strong>PRESENTE SURPRESA!</strong></p>
 
-        <!-- 3. COLE SEU LINK DO FORMSPREE AQUI -->
-        <form id="lead-form" action="https://getform.io/f/https://getform.io/f/ayvegdgb" method="POST">
+        <!-- MUDANÇA 1: ACTION ATUALIZADO PARA O NOVO LINK DO FORMSPREE -->
+        <form id="lead-form" action="https://formspree.io/f/mzzlgerq" method="POST">
             <div class="form-group">
                 <label for="name">Seu primeiro nome:</label>
                 <input type="text" id="name" name="Nome" placeholder="Como podemos te chamar?" required>
@@ -142,35 +93,8 @@
         </form>
     </div>
 
-    <script>
-        const form = document.getElementById('lead-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    // --- 4. PERSONALIZE SEU NÚMERO E MENSAGEM AQUI ---
-                    const seuNumeroWhatsapp = '5546991032150'; // <-- TROQUE PELO SEU NÚMERO
-                    const nome = formData.get('Nome');
-                    const mensagem = `Olá! Vi as promoções da semana e respondi a pesquisa para desbloquear meu presente surpresa! Meu nome é ${nome}. Qual é a surpresa? 👀`;
-                    
-                    const mensagemCodificada = encodeURIComponent(mensagem);
-                    const urlWhatsapp = `https://wa.me/${seuNumeroWhatsapp}?text=${mensagemCodificada}`;
-                    
-                    window.open(urlWhatsapp, '_blank');
-                } else {
-                    alert('Houve um erro ao enviar seu formulário. Por favor, tente novamente.');
-                }
-            }).catch(error => {
-                alert('Houve um erro de conexão. Por favor, tente novamente.');
-            });
-        });
-    </script>
+    <!-- MUDANÇA 2: SCRIPT REMOVIDO (MUITO IMPORTANTE) -->
+    <!-- O JavaScript foi apagado para que o redirecionamento funcione no celular -->
 
 </body>
 </html>
