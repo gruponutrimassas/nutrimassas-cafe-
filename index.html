@@ -34,3 +34,71 @@
         .form-group { margin-bottom: 20px; text-align: left; }
         label { display: block; margin-bottom: 8px; font-weight: bold; }
         input[type="text"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: 'Poppins', sans-serif; font-size: 1em; }
+        .cookie-button-wrapper { margin-top: 30px; }
+        .cookie-button {
+            width: 150px; height: 150px; background-color: var(--cor-vermelha);
+            color: #fff; border: 3px solid var(--cor-marrom-escuro); border-radius: 50%;
+            font-size: 1.1em; font-weight: bold; cursor: pointer; display: flex;
+            justify-content: center; align-items: center; text-align: center;
+            margin: 0 auto; transition: transform 0.2s ease; animation: pulse 2s infinite;
+        }
+        .cookie-button:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="logo_nutrimassas_cafe_2.png" alt="Logo da Nutrimassas Café" class="logo">
+        <h1>Sua espera ficou ainda mais gostosa!</h1>
+        <p>Confira nossas delícias da semana enquanto espera.</p>
+
+        <div class="promocoes-semana">
+            <h2>☕ Delícias da Semana ☕</h2>
+            <div class="promo-card">
+                <span class="promo-dia">SEGUNDA E TERÇA:</span> Combo Força Total (Café + Pão de Queijo ) por R$ 10,00 (Café + Pastel) por R$ 15,00.
+            </div>
+            <div class="promo-card">
+                <span class="promo-dia">QUARTA:</span> Combo família: 100 salgados por R$ 99,90.
+            </div>
+        </div>
+
+        <p class="bridge-text">Gostou? Fica ainda melhor...<br>Responda abaixo e desbloqueie um <strong>PRESENTE SURPRESA!</strong></p>
+
+        <form id="lead-form">
+            <div class="form-group">
+                <label for="name">Seu primeiro nome:</label>
+                <input type="text" id="name" name="Nome" placeholder="Como podemos te chamar?" required>
+            </div>
+            <div class="form-group">
+                <label>Qual é a sua bebida favorita para começar o dia?</label>
+                <input type="text" name="BebidaFavorita" placeholder="Ex: Café, Chá, Suco..." required>
+            </div>
+            <div class="form-group">
+                <label>Se pudesse escolher qualquer sobremesa agora, qual seria?</label>
+                <input type="text" name="SobremesaFavorita" placeholder="Ex: Bolo de Chocolate, Torta de Limão..." required>
+            </div>
+            <div class="form-group">
+                <label>O que tornaria sua experiência em nosso café ainda mais especial?</label>
+                <input type="text" name="ExperienciaEspecial" placeholder="Ex: Música ao vivo, Descontos especiais..." required>
+            </div>
+            <div class="cookie-button-wrapper">
+                <button type="submit" class="cookie-button">
+                    DESBLOQUEAR<br>MEU PRESENTE!
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('name').value;
+            const mensagem = `Olá! Vi as promoções da semana e meu nome é ${nome}. Qual é a surpresa? 👀`;
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            const urlWhatsapp = `https://wa.me/5546991032150?text=${mensagemCodificada}`;
+            window.location.href = urlWhatsapp;
+        });
+    </script>
+
+</body>
+</html>
